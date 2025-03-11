@@ -1,184 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart ATS Chatbot</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Smart ATS Chatbot</title>  
+    <style>  
+        /* General Styles */  
+        body {  
+            font-family: 'Arial', sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f0f4f8;  
+            color: #444;  
+            line-height: 1.6;  
+        }  
 
-        header {
-            background-color: #0062cc;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        header {  
+            background-color: #4a90e2;  
+            color: white;  
+            padding: 60px 20px;  
+            text-align: center;  
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);  
+        }  
 
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-weight: 600;
-        }
+        header h1 {  
+            margin: 0;  
+            font-size: 3.5em;  
+            font-weight: 700;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  
+        }  
 
-        header p {
-            margin: 10px 0;
-            font-size: 1.3em;
-            font-weight: 300;
-        }
+        header p {  
+            margin: 10px 0;  
+            font-size: 1.5em;  
+            font-weight: 300;  
+        }  
 
-        main {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+        main {  
+            padding: 40px 20px;  
+            max-width: 1200px;  
+            margin: auto;  
+        }  
 
-        .section {
-            margin-bottom: 50px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+        .section {  
+            margin-bottom: 50px;  
+            background-color: #ffffff;  
+            padding: 30px;  
+            border-radius: 12px;  
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  
+            transition: transform 0.3s, box-shadow 0.3s;  
+        }  
 
-        .section h2 {
-            color: #0062cc;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
+        .section:hover {  
+            transform: translateY(-5px);  
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);  
+        }  
 
-        .section p {
-            font-size: 1.1em;
-            color: #555;
-        }
+        .section h2 {  
+            color: #4a90e2;  
+            font-size: 2.5em;  
+            margin-bottom: 20px;  
+            border-bottom: 2px solid #4a90e2;  
+            display: inline-block;  
+            padding-bottom: 10px;  
+        }  
 
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
+        .section p {  
+            font-size: 1.1em;  
+            color: #555;  
+        }  
 
-        .section ul li {
-            font-size: 1.2em;
-            margin-bottom: 12px;
-            color: #333;
-        }
+        .section ul {  
+            list-style: none;  
+            padding: 0;  
+        }  
 
-        iframe {
-            width: 100%;
-            height: 650px;
-            border: none;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+        .section ul li {  
+            font-size: 1.2em;  
+            margin-bottom: 12px;  
+            color: #333;  
+        }  
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0062cc;
-            color: white;
-            margin-top: 40px;
-            border-top: 3px solid #00408b;
-        }
+        iframe {  
+            width: 100%;  
+            height: 650px;  
+            border: none;  
+            margin-top: 20px;  
+            border-radius: 12px;  
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  
+        }  
 
-        footer a {
-            color: #ffdd57;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
+        footer {  
+            text-align: center;  
+            padding: 20px;  
+            background-color: #4a90e2;  
+            color: white;  
+            margin-top: 40px;  
+            border-top: 3px solid #357ab8;  
+            position: relative;  
+        }  
 
-        footer a:hover {
-            text-decoration: underline;
-            color: #ffd700;
-        }
+        footer a {  
+            color: #ffdd57;  
+            text-decoration: none;  
+            font-weight: bold;  
+            transition: color 0.3s ease-in-out;  
+        }  
 
-        /* Hover Effects for Section */
-        .section:hover {
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-        }
+        footer a:hover {  
+            text-decoration: underline;  
+            color: #ffd700;  
+        }  
 
-        /* Hover Effect for Links in Section */
-        .section ul li a {
-            color: #0062cc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+        /* Responsive Styles */  
+        @media screen and (max-width: 768px) {  
+            header h1 {  
+                font-size: 2.5em;  
+            }  
 
-        .section ul li a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
+            .section h2 {  
+                font-size: 2em;  
+            }  
 
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 2.2em;
-            }
+            iframe {  
+                height: 500px;  
+            }  
 
-            .section h2 {
-                font-size: 1.8em;
-            }
+            footer p {  
+                font-size: 0.9em;  
+            }  
 
-            iframe {
-                height: 500px;
-            }
+            .section {  
+                padding: 20px;  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <h1>Smart ATS Chatbot</h1>  
+        <p>Your AI-powered resume analysis and career guidance assistant</p>  
+    </header>  
 
-            footer p {
-                font-size: 0.9em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Smart ATS Chatbot</h1>
-        <p>Your AI-powered resume analysis and career guidance assistant</p>
-    </header>
+    <main>  
+        <div class="section">  
+            <h2>About the Project</h2>  
+            <p>  
+                The <strong>Smart ATS Chatbot</strong> is an AI-powered application designed to help job seekers   
+                refine their resumes, receive actionable feedback, and explore career opportunities tailored to   
+                their skills. With features like resume scoring, personalized feedback, and internship/job   
+                recommendations, this tool simplifies the job search process for students and professionals alike.  
+            </p>  
+        </div>  
 
-    <main>
-        <div class="section">
-            <h2>About the Project</h2>
-            <p>
-                The <strong>Smart ATS Chatbot</strong> is an AI-powered application designed to help job seekers 
-                refine their resumes, receive actionable feedback, and explore career opportunities tailored to 
-                their skills. With features like resume scoring, personalized feedback, and internship/job 
-                recommendations, this tool simplifies the job search process for students and professionals alike.
-            </p>
-        </div>
+        <div class="section">  
+            <h2>Features</h2>  
+            <ul>  
+                <li><a href="#">Upload resumes for AI-based analysis</a></li>  
+                <li><a href="#">Receive personalized feedback and resume scores</a></li>  
+                <li><a href="#">Discover relevant internships and job opportunities</a></li>  
+                <li><a href="#">Chat with the AI for career guidance and improvement suggestions</a></li>  
+            </ul>  
+        </div>  
 
-        <div class="section">
-            <h2>Features</h2>
-            <ul>
-                <li><a href="#">Upload resumes for AI-based analysis</a></li>
-                <li><a href="#">Receive personalized feedback and resume scores</a></li>
-                <li><a href="#">Discover relevant internships and job opportunities</a></li>
-                <li><a href="#">Chat with the AI for career guidance and improvement suggestions</a></li>
-            </ul>
-        </div>
+        <div class="section">  
+            <h2>Explore the Live Application</h2>  
+            <p>Use the embedded application below to try out the Smart ATS Chatbot:</p>  
+            <iframe src="https://smart-ats-chatbot.streamlit.app/?embed=true" title="Smart ATS Chatbot"></iframe>  
+        </div>  
+    </main>  
 
-        <div class="section">
-            <h2>Explore the Live Application</h2>
-            <p>Use the embedded application below to try out the Smart ATS Chatbot:</p>
-            <iframe src="https://smart-ats-chatbot.streamlit.app/?embed=true" title="Smart ATS Chatbot"></iframe>
-        </div>
-    </main>
-
-    <footer>
-        <p>
-            Built by <a href="https://www.linkedin.com/in/chappidiavinash/" target="_blank">Avinash</a> 
-        </p>
-        <p>
-            Check out the code on <a href="https://github.com/ManyamSanjayKumarReddy/Smart-Ats" target="_blank">GitHub</a>.
-        </p>
-    </footer>
-</body>
-</html>
+    <footer>  
+        <p>  
+            Built by <a href="https://www.linkedin.com/in/chappidiavinash/" target="_blank">Avinash</a>   
+        </p>  
+        <p>  
+            Check out the code on <a href="https://github.com/191fa04431/SMART-ATS-CHATBOT.git" target="_blank">GitHub</a>.  
+        </p>  
+    </footer>  
+</body>  
+</html>  
